@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview — Tarjeta de Crédito Bantrab</title>
+  <style>
+    :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #08090a; color: #f7f7f7; }
+    button { font: inherit; }
+    .bar { min-height: 58px; display: flex; align-items: center; gap: 15px; padding: 0 max(24px, calc((100vw - 1180px)/2)); border-bottom: 1px solid #292a2b; font-size: 14px; }
+    .mark { width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; border-bottom: 18px solid #ffd400; }
+    .slash { color: #63666a; }
+    .muted { color: #8e9194; }
+    main { width: min(100% - 48px, 1180px); margin: 56px auto 100px; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 3vw, 42px); letter-spacing: -.045em; }
+    .intro { max-width: 680px; margin: 0 0 26px; color: #a8aaad; font-size: 16px; line-height: 1.55; }
+    .controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 18px 0; border-top: 1px solid #2a2c2e; }
+    .group { display: flex; padding: 3px; border: 1px solid #343638; border-radius: 8px; }
+    .control { border: 1px solid #343638; border-radius: 7px; color: #dedfe0; background: transparent; padding: 10px 15px; cursor: pointer; }
+    .group .control { border: 0; border-radius: 5px; }
+    .control:hover { border-color: #666; }
+    .control[aria-pressed="true"] { background: #f1f1f1; color: #111; }
+    .count { margin-left: auto; color: #999; font-size: 13px; }
+    .piece { border: 1px solid #313334; border-radius: 9px; overflow: hidden; }
+    .piece-head { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: #111213; font-size: 15px; }
+    .tag { padding: 4px 8px; border: 1px solid #37393a; border-radius: 5px; color: #aaa; font-size: 12px; }
+    .status { margin-left: auto; padding: 4px 7px; border-radius: 4px; background: #302909; color: #ffcf31; font-family: monospace; font-size: 12px; }
+    .stage { min-height: 620px; padding: 38px 20px; display: flex; align-items: flex-start; overflow: auto; background: #fff; transition: background .2s ease; }
+    .stage.gray { background: #8f9396; }
+    .stage.black { background: #101112; }
+    .ad-shell { flex: none; position: relative; width: min(320px, 100%); margin: 0 auto; aspect-ratio: 9/16; box-shadow: 0 12px 42px #0005; border: 1px solid #272727; background: #ddd; }
+    .ad-shell.real { width: 1080px; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .piece-foot { display: flex; gap: 32px; padding: 14px 18px; color: #a4a6a8; font-size: 13px; }
+    .piece-foot b { color: #dedfe0; font-weight: 500; }
+    h2 { margin: 45px 0 18px; font-size: 22px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid #2e3032; }
+    th { color: #a5a8aa; font-weight: 500; }
+    .notes { color: #aaa; line-height: 1.55; }
+    .notes li { margin-bottom: 8px; }
+    @media (max-width: 700px) { main { width: min(100% - 32px, 1180px); margin-top: 36px; } .bar { padding: 0 16px; } .stage { min-height: 0; padding: 26px 12px; } .piece-foot { gap: 15px; } table { font-size: 12px; } th,td { padding: 9px 5px; } .count { width: 100%; margin: 4px 0 0; } }
+  </style>
+</head>
+<body>
+  <header class="bar"><span class="mark" aria-hidden="true"></span><span>Remesas Bantrab</span><span class="slash">/</span><span>Preview rich media</span></header>
+  <main>
+    <h1>Pré-visualização da peça</h1>
+    <p class="intro">Teste a animação, o contraste em diferentes fundos e a leitura no tamanho de exibição. Esta página abre a peça HTML5 original dentro de um quadro de preview.</p>
+    <div class="controls" aria-label="Controles do preview">
+      <div class="group" role="group" aria-label="Cor do fundo">
+        <button class="control" type="button" data-bg="white" aria-pressed="true">Branco</button>
+        <button class="control" type="button" data-bg="gray" aria-pressed="false">Cinza</button>
+        <button class="control" type="button" data-bg="black" aria-pressed="false">Preto</button>
+      </div>
+      <button class="control" type="button" id="replay">Replay animações</button>
+      <button class="control" type="button" id="real" aria-pressed="false">Ver em tamanho real</button>
+      <span class="count">1 peça</span>
+    </div>
+    <section class="piece" aria-label="Preview de Tarjeta de Crédito Bantrab">
+      <div class="piece-head"><strong>1080 × 1920</strong><span class="tag">HTML5</span><span class="status">Prévia</span></div>
+      <div class="stage" id="stage"><div class="ad-shell" id="ad-shell"><iframe id="ad-frame" title="Tarjeta de Crédito Bantrab"></iframe></div></div>
+      <div class="piece-foot"><span>Tipo&nbsp; <b>HTML5</b></span><span>Formato&nbsp; <b>Vertical</b></span><span>Dimensão&nbsp; <b>1080 × 1920</b></span></div>
+    </section>
+    <h2>Especificação técnica</h2>
+    <table><thead><tr><th>Peça</th><th>Tipo</th><th>Dimensão</th><th>Arquivo</th></tr></thead><tbody><tr><td>Tarjeta_Bantrab_1080x1920</td><td>HTML5</td><td>1080 × 1920</td><td>index.html + assets</td></tr></tbody></table>
+    <h2>Observações antes da entrega</h2>
+    <ul class="notes"><li>Defina o endereço de destino no <code>clickTag</code> da peça.</li><li>Confirme o limite de peso e o slot 1080 × 1920 com o veículo ou ad server.</li></ul>
+  </main>
+  <script>
+    const stage = document.getElementById('stage');
+    const shell = document.getElementById('ad-shell');
+    const frame = document.getElementById('ad-frame');
+    const adPath = location.protocol === 'file:' ? './index.html' : '/index.html';
+    frame.src = adPath;
+    document.querySelectorAll('[data-bg]').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('[data-bg]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      stage.className = 'stage' + (button.dataset.bg === 'white' ? '' : ' ' + button.dataset.bg);
+    }));
+    document.getElementById('replay').addEventListener('click', () => { frame.src = adPath + '?replay=' + Date.now(); });
+    document.getElementById('real').addEventListener('click', event => {
+      const active = shell.classList.toggle('real');
+      event.currentTarget.setAttribute('aria-pressed', String(active));
+      event.currentTarget.textContent = active ? 'Ajustar à tela' : 'Ver em tamanho real';
+    });
+  </script>
+</body>
+</html>
