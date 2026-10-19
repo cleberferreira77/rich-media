@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="ad.size" content="width=1080,height=1920">
+  <title>Tarjeta de Crédito Bantrab</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+    body { background: #222; font-family: Arial, Helvetica, sans-serif; }
+    #ad { position: fixed; top: 50%; left: 50%; margin-top: -960px; margin-left: -540px; width: 1080px; height: 1920px; overflow: hidden; isolation: isolate; color: #fff; background: #c9dbe1; transform: scale(var(--ad-scale, .25)); transform-origin: center center; cursor: pointer; }
+    .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: -2; }
+    .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(16,28,30,.19), transparent 35%, transparent 59%, rgba(7,17,22,.24) 70%, rgba(7,17,22,.67) 100%); }
+    .frame { position: absolute; inset: 12px; border: 2px solid rgba(255,255,255,.9); pointer-events: none; }
+    .headline { position: absolute; top: 310px; left: 0; width: 100%; text-align: center; text-shadow: 0 2px 5px #0004; animation: text-in .7s .12s both cubic-bezier(.16,1,.3,1); }
+    .headline strong { display: block; font-size: 144px; line-height: .82; font-weight: 900; letter-spacing: -9px; }
+    .headline span { display: block; font-size: 52px; line-height: 1.08; letter-spacing: -2px; }
+    .offer { position: absolute; top: 1340px; left: 116px; width: 392px; text-align: center; text-shadow: 0 1px 3px #0008; animation: text-in .65s .56s both cubic-bezier(.16,1,.3,1); }
+    .offer .main-line { display: block; white-space: nowrap; font-size: 36px; line-height: .98; letter-spacing: -1.9px; }
+    .offer .main-line b { font-weight: 900; }
+    .offer .benefit { display: block; margin-top: 12px; padding: 9px 11px 10px; background: #65c8d0; border-radius: 2px; font-size: 29px; line-height: .98; letter-spacing: -1.2px; }
+    .cards { position: absolute; top: 1290px; left: 515px; width: 445px; height: 255px; perspective: 1100px; }
+    .card { position: absolute; top: 0; width: 180px; height: 250px; opacity: 0; transform-style: preserve-3d; backface-visibility: visible; filter: drop-shadow(7px 11px 8px #0008); }
+    .card svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .card:nth-child(1) { left: 0; z-index: 3; animation: card-one 6.6s linear infinite; }
+    .card:nth-child(2) { left: 132px; z-index: 2; animation: card-two 6.6s linear infinite; }
+    .card:nth-child(3) { left: 265px; z-index: 1; animation: card-three 6.6s linear infinite; }
+    .footer { position: absolute; top: 1640px; left: 0; width: 100%; display: flex; justify-content: center; align-items: center; gap: 26px; animation: text-in .65s .92s both cubic-bezier(.16,1,.3,1); }
+    .footer .cta { font-size: 59px; letter-spacing: -3.5px; }
+    .footer .divider { width: 2px; height: 116px; background: #fff; }
+    .anniversary { display: flex; align-items: center; gap: 8px; }
+    .anniversary .number { display: block; font-size: 95px; font-weight: 300; letter-spacing: -11px; line-height: 1; padding-right: 7px; }
+    .anniversary .words { display: block; font-size: 30px; line-height: .95; }
+    .anniversary .words small { display: block; font-size: 18px; letter-spacing: .2px; }
+    @keyframes text-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    /* Um cartão por vez; após o terceiro, os três somem juntos antes do próximo ciclo. */
+    @keyframes card-one { 0%,9% { opacity:0;transform:rotateY(0) translateY(18px) } 14% { opacity:1;transform:rotateY(0) translateY(0) } 26%,74% { opacity:1;transform:rotateY(360deg) translateY(0) } 82%,100% { opacity:0;transform:rotateY(360deg) translateY(0) } }
+    @keyframes card-two { 0%,28% { opacity:0;transform:rotateY(0) translateY(18px) } 33% { opacity:1;transform:rotateY(0) translateY(0) } 45%,74% { opacity:1;transform:rotateY(360deg) translateY(0) } 82%,100% { opacity:0;transform:rotateY(360deg) translateY(0) } }
+    @keyframes card-three { 0%,47% { opacity:0;transform:rotateY(0) translateY(18px) } 52% { opacity:1;transform:rotateY(0) translateY(0) } 64%,74% { opacity:1;transform:rotateY(360deg) translateY(0) } 82%,100% { opacity:0;transform:rotateY(360deg) translateY(0) } }
+    @media (prefers-reduced-motion: reduce) { .headline,.offer,.footer,.card { animation: none !important; opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <main id="ad" role="link" tabindex="0" aria-label="Tarjeta de Crédito Bantrab">
+    <img class="photo" src="assets/mulher-compras-central-america.png" alt="Mulher negra latina sorrindo com cartão e sacolas de compras em uma rua comercial">
+    <div class="shade" aria-hidden="true"></div><div class="frame" aria-hidden="true"></div>
+    <div class="headline"><strong>TARJETA</strong><span>de Crédito Bantrab</span></div>
+    <div class="offer"><span class="main-line"><b>TUYA</b> para llegar listo</span><span class="main-line">a la temporada de ofertas</span><span class="benefit">Cuotas sin intereses<br>desde el primer día.<br>Acumula puntos con<br>cada compra.</span></div>
+    <div class="cards" aria-hidden="true">
+      <div class="card"><svg viewBox="0 0 180 250" xmlns="http://www.w3.org/2000/svg"><rect width="180" height="250" rx="8" fill="#171b1b"/><rect x="2" y="2" width="176" height="246" rx="6" fill="none" stroke="#ffffff32"/><text x="12" y="22" fill="#eee" font-size="12" font-weight="700" font-family="Arial">bantrab</text><rect x="116" y="17" width="39" height="29" rx="5" fill="#b9b9aa"/><path d="M116 31h39M129 17v29M142 17v29" stroke="#ffffff55" stroke-width="1"/><g transform="translate(90 130)" fill="#d72081"><path d="M0-47L8-15 0-3-8-15Z"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(45)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(90)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(135)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(180)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(225)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(270)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(315)"/></g><text x="90" y="229" fill="white" text-anchor="middle" font-size="25" font-style="italic" font-weight="900" font-family="Arial">VISA</text></svg></div>
+      <div class="card"><svg viewBox="0 0 180 250" xmlns="http://www.w3.org/2000/svg"><rect width="180" height="250" rx="8" fill="#171b1b"/><rect x="2" y="2" width="176" height="246" rx="6" fill="none" stroke="#ffffff32"/><text x="12" y="22" fill="#eee" font-size="12" font-weight="700" font-family="Arial">bantrab</text><rect x="116" y="17" width="39" height="29" rx="5" fill="#b9b9aa"/><path d="M116 31h39M129 17v29M142 17v29" stroke="#ffffff55" stroke-width="1"/><g transform="translate(90 130)" fill="#e3dc16"><path d="M0-47L8-15 0-3-8-15Z"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(45)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(90)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(135)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(180)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(225)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(270)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(315)"/></g><text x="90" y="229" fill="white" text-anchor="middle" font-size="25" font-style="italic" font-weight="900" font-family="Arial">VISA</text></svg></div>
+      <div class="card"><svg viewBox="0 0 180 250" xmlns="http://www.w3.org/2000/svg"><rect width="180" height="250" rx="8" fill="#171b1b"/><rect x="2" y="2" width="176" height="246" rx="6" fill="none" stroke="#ffffff32"/><text x="12" y="22" fill="#eee" font-size="12" font-weight="700" font-family="Arial">bantrab</text><rect x="116" y="17" width="39" height="29" rx="5" fill="#b9b9aa"/><path d="M116 31h39M129 17v29M142 17v29" stroke="#ffffff55" stroke-width="1"/><g transform="translate(90 130)" fill="#83d1d4"><path d="M0-47L8-15 0-3-8-15Z"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(45)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(90)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(135)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(180)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(225)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(270)"/><path d="M0-47L8-15 0-3-8-15Z" transform="rotate(315)"/></g><text x="90" y="229" fill="white" text-anchor="middle" font-size="25" font-style="italic" font-weight="900" font-family="Arial">VISA</text></svg></div>
+    </div>
+    <div class="footer"><span class="cta">Solicítala</span><span class="divider"></span><span class="anniversary"><span class="number">60</span><span class="words">años<small>BANTRAB</small></span></span></div>
+  </main>
+  <script>
+    function fitAd() {
+      const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      const viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+      const scale = Math.min(viewportWidth / 1080, viewportHeight / 1920);
+      document.documentElement.style.setProperty('--ad-scale', String(scale));
+    }
+    fitAd();
+    addEventListener('resize', fitAd);
+    if (window.visualViewport) visualViewport.addEventListener('resize', fitAd);
+    window.clickTag = window.clickTag || '';
+    const ad = document.getElementById('ad');
+    function openClickTag() { if (window.clickTag) window.open(window.clickTag, '_blank', 'noopener'); }
+    ad.addEventListener('click', openClickTag);
+    ad.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openClickTag(); } });
+  </script>
+</body>
+</html>
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview — Tarjeta de Crédito Bantrab</title>
+  <style>
+    :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #08090a; color: #f7f7f7; }
+    button { font: inherit; }
+    .bar { min-height: 58px; display: flex; align-items: center; gap: 15px; padding: 0 max(24px, calc((100vw - 1180px)/2)); border-bottom: 1px solid #292a2b; font-size: 14px; }
+    .mark { width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; border-bottom: 18px solid #ffd400; }
+    .slash { color: #63666a; }
+    .muted { color: #8e9194; }
+    main { width: min(100% - 48px, 1180px); margin: 56px auto 100px; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 3vw, 42px); letter-spacing: -.045em; }
+    .intro { max-width: 680px; margin: 0 0 26px; color: #a8aaad; font-size: 16px; line-height: 1.55; }
+    .controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 18px 0; border-top: 1px solid #2a2c2e; }
+    .group { display: flex; padding: 3px; border: 1px solid #343638; border-radius: 8px; }
+    .control { border: 1px solid #343638; border-radius: 7px; color: #dedfe0; background: transparent; padding: 10px 15px; cursor: pointer; }
+    .group .control { border: 0; border-radius: 5px; }
+    .control:hover { border-color: #666; }
+    .control[aria-pressed="true"] { background: #f1f1f1; color: #111; }
+    .count { margin-left: auto; color: #999; font-size: 13px; }
+    .piece { border: 1px solid #313334; border-radius: 9px; overflow: hidden; }
+    .piece-head { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: #111213; font-size: 15px; }
+    .tag { padding: 4px 8px; border: 1px solid #37393a; border-radius: 5px; color: #aaa; font-size: 12px; }
+    .status { margin-left: auto; padding: 4px 7px; border-radius: 4px; background: #302909; color: #ffcf31; font-family: monospace; font-size: 12px; }
+    .stage { min-height: 620px; padding: 38px 20px; display: flex; align-items: flex-start; overflow: auto; background: #fff; transition: background .2s ease; }
+    .stage.gray { background: #8f9396; }
+    .stage.black { background: #101112; }
+    .ad-shell { flex: none; position: relative; width: min(320px, 100%); margin: 0 auto; aspect-ratio: 9/16; box-shadow: 0 12px 42px #0005; border: 1px solid #272727; background: #ddd; }
+    .ad-shell.real { width: 1080px; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .piece-foot { display: flex; gap: 32px; padding: 14px 18px; color: #a4a6a8; font-size: 13px; }
+    .piece-foot b { color: #dedfe0; font-weight: 500; }
+    h2 { margin: 45px 0 18px; font-size: 22px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid #2e3032; }
+    th { color: #a5a8aa; font-weight: 500; }
+    .notes { color: #aaa; line-height: 1.55; }
+    .notes li { margin-bottom: 8px; }
+    @media (max-width: 700px) { main { width: min(100% - 32px, 1180px); margin-top: 36px; } .bar { padding: 0 16px; } .stage { min-height: 0; padding: 26px 12px; } .piece-foot { gap: 15px; } table { font-size: 12px; } th,td { padding: 9px 5px; } .count { width: 100%; margin: 4px 0 0; } }
+  </style>
+</head>
+<body>
+  <header class="bar"><span class="mark" aria-hidden="true"></span><span>Remesas Bantrab</span><span class="slash">/</span><span>Preview rich media</span></header>
+  <main>
+    <h1>Pré-visualização da peça</h1>
+    <p class="intro">Teste a animação, o contraste em diferentes fundos e a leitura no tamanho de exibição. Esta página abre a peça HTML5 original dentro de um quadro de preview.</p>
+    <div class="controls" aria-label="Controles do preview">
+      <div class="group" role="group" aria-label="Cor do fundo">
+        <button class="control" type="button" data-bg="white" aria-pressed="true">Branco</button>
+        <button class="control" type="button" data-bg="gray" aria-pressed="false">Cinza</button>
+        <button class="control" type="button" data-bg="black" aria-pressed="false">Preto</button>
+      </div>
+      <button class="control" type="button" id="replay">Replay animações</button>
+      <button class="control" type="button" id="real" aria-pressed="false">Ver em tamanho real</button>
+      <span class="count">1 peça</span>
+    </div>
+    <section class="piece" aria-label="Preview de Tarjeta de Crédito Bantrab">
+      <div class="piece-head"><strong>1080 × 1920</strong><span class="tag">HTML5</span><span class="status">Prévia</span></div>
+      <div class="stage" id="stage"><div class="ad-shell" id="ad-shell"><iframe id="ad-frame" title="Tarjeta de Crédito Bantrab"></iframe></div></div>
+      <div class="piece-foot"><span>Tipo&nbsp; <b>HTML5</b></span><span>Formato&nbsp; <b>Vertical</b></span><span>Dimensão&nbsp; <b>1080 × 1920</b></span></div>
+    </section>
+    <h2>Especificação técnica</h2>
+    <table><thead><tr><th>Peça</th><th>Tipo</th><th>Dimensão</th><th>Arquivo</th></tr></thead><tbody><tr><td>Tarjeta_Bantrab_1080x1920</td><td>HTML5</td><td>1080 × 1920</td><td>index.html + assets</td></tr></tbody></table>
+    <h2>Observações antes da entrega</h2>
+    <ul class="notes"><li>Defina o endereço de destino no <code>clickTag</code> da peça.</li><li>Confirme o limite de peso e o slot 1080 × 1920 com o veículo ou ad server.</li></ul>
+  </main>
+  <script>
+    const stage = document.getElementById('stage');
+    const shell = document.getElementById('ad-shell');
+    const frame = document.getElementById('ad-frame');
+    const adPath = location.protocol === 'file:' ? './index.html' : '/index.html';
+    frame.src = adPath;
+    document.querySelectorAll('[data-bg]').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('[data-bg]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      stage.className = 'stage' + (button.dataset.bg === 'white' ? '' : ' ' + button.dataset.bg);
+    }));
+    document.getElementById('replay').addEventListener('click', () => { frame.src = adPath + '?replay=' + Date.now(); });
+    document.getElementById('real').addEventListener('click', event => {
+      const active = shell.classList.toggle('real');
+      event.currentTarget.setAttribute('aria-pressed', String(active));
+      event.currentTarget.textContent = active ? 'Ajustar à tela' : 'Ver em tamanho real';
+    });
+  </script>
+</body>
+</html>
+
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/p/bantrab-tarjeta", "destination": "/preview.html" }
+  ]
+}Adicionar preview Bantrab
