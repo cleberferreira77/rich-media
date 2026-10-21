@@ -14,7 +14,8 @@
   const photo = variant === 'futuro' ? 'familia.jpg' : 'suenos.jpg';
   const first = card('front', photo, line);
   const offer = `<section class="scene scene-offer" aria-label="Bantrab: solicita tu cuenta aquí"><div class="final-glow"></div><img class="final-brand" src="assets/bantrab-60.png" alt="60 años Bantrab"><span class="blue-cta">Solicita tu cuenta aquí <b aria-hidden="true">↗</b></span></section>`;
-  const scenes = kind === 'cube' ? `<div class="cube"><div class="cube-face face-1">${first}</div><div class="cube-face face-2">${offer}</div></div>` : first;
+  const reset = `<section class="scene scene-reset" aria-hidden="true"></section>`;
+  const scenes = kind === 'cube' ? `<div class="cube"><div class="cube-face face-1">${first}</div><div class="cube-face face-2">${offer}</div><div class="cube-face face-3">${reset}</div><div class="cube-face face-4">${reset}</div></div>` : first;
   document.body.innerHTML = `<main class="ad" style="--ad-width:${width}px;--ad-height:${height}px">
     <div class="stage ${kind === 'cube' ? 'cube-stage' : 'floating-stage'}">${scenes}</div>
     <div class="footer"><img src="assets/bantrab-60.png" alt="60 años Bantrab"><span class="cta">Solicita tu cuenta aquí <b aria-hidden="true">↗</b></span></div>
