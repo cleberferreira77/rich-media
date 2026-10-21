@@ -46,7 +46,9 @@
     </article>`;
 
   const floating = `
-    <div class="floating-stage">${stories.map((item, index) => story(item, index, `scene-${index + 1}`)).join('')}</div>
+    <div class="floating-stage">${stories.map((item, index) => story(item, index, `scene-${index + 1}`)).join('')}
+      <div class="floating-closing">${closing}</div>
+    </div>
     <img class="floating-object" src="${asset('selo-60-anos.png')}" alt="" aria-hidden="true">`;
 
   const cube = `
@@ -64,6 +66,7 @@
         <img src="${asset('assinatura-60-bantrab.png')}" alt="">
         <span class="cta">Conoce más <span>↗</span></span>
       </div>
+      <span class="top-cta" aria-hidden="true">Conoce más <span>↗</span></span>
       <a class="click-area" href="${destination}" target="_blank" rel="noopener noreferrer" aria-label="Conoce más sobre Bantrab"></a>
     </main>`;
 })();
