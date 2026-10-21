@@ -8,7 +8,7 @@ Dois anúncios independentes (`futuro` e `suenos`). Cada um tem versões Floatin
 - O PSD `SLIDE 10.psd` é a versão quadrada da primeira história; não introduz uma terceira mensagem.
 - Todos os assets estão locais em cada pasta de peça. Os ZIPs de entrega ficam em `packages/`.
 - Destino: `https://experienciabantrab.com/ahorro/`, com suporte a `window.clickTag` e `window.clickTAG`.
-- 3D Cube: foto e mensagem na primeira face; assinatura e CTA na face azul. O giro segue sempre para a esquerda, com as faces de retorno sem texto.
+- 3D Cube: as quatro faces alternam foto e mensagem com assinatura e CTA na face azul. Cada giro de 90° segue para a esquerda, sem telas vazias.
 - Para regenerar após alterações em `src/`: `python3 ahorro/src/build.py`.
 
 O arquivo `.crdownload` enviado pelo cliente estava incompleto e não foi usado.

@@ -52,15 +52,14 @@
 .static-offer.kind-cube .footer{opacity:0!important}
 @media (prefers-reduced-motion:reduce){.kind-cube .cube,.kind-cube .footer,.blue-cta{animation:none!important}.kind-cube .footer{opacity:1}}
 
-/* Volta completa sempre para a esquerda; faces de retorno sem texto. */
-.scene-reset{background:radial-gradient(circle at 68% 25%,#56a9a9,#0b3c3e 52%,#071e20)}
+/* Quatro faces alternam foto e CTA; cada giro segue para a esquerda. */
 .kind-cube .cube{animation:cube-left 14s linear infinite}
 .kind-cube .footer{animation:cube-footer-left 14s linear infinite}
 @keyframes cube-left{
-  0%,40%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(0deg)}
-  46%,86%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-90deg)}
-  91%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-180deg)}
-  96%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-270deg)}
+  0%,20%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(0deg)}
+  25%,45%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-90deg)}
+  50%,70%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-180deg)}
+  75%,95%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-270deg)}
   100%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-360deg)}
 }
-@keyframes cube-footer-left{0%,42%{opacity:1}47%,99%{opacity:0}100%{opacity:1}}
+@keyframes cube-footer-left{0%,20%{opacity:1}25%,45%{opacity:0}50%,70%{opacity:1}75%,95%{opacity:0}100%{opacity:1}}
