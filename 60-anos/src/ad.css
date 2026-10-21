@@ -52,30 +52,41 @@ body.size-400x300 .campaign-logo{left:8%;top:6%}
 body.size-400x300 .copy-panel{left:8%;right:8%;top:47%;bottom:16%}
 body.size-400x300 .ad-footer{padding-left:8%;padding-right:8%}
 
-/* Sequência de mídia: cartelas inteiras, leitura pausada e CTA no fechamento. */
-.floating-stage{perspective:1100px;background:#171311}
-.floating-stage .story{opacity:1;backface-visibility:hidden;transform-origin:left center}
-.floating-stage .scene-1{z-index:4;animation:card-one 16s cubic-bezier(.38,.06,.16,1) infinite}
-.floating-stage .scene-2{z-index:3;animation:card-two 16s cubic-bezier(.38,.06,.16,1) infinite}
-.floating-stage .scene-3{z-index:2;animation:card-three 16s cubic-bezier(.38,.06,.16,1) infinite}
-.floating-stage .copy-panel{animation:none}
+/* Cartelas estáveis; só foto e texto entram suavemente. */
+.floating-stage{background:#171311}
+.floating-stage .story{opacity:1;transform:none;backface-visibility:visible}
+.floating-stage .scene-1{z-index:4;animation:fade-one 20s linear infinite}
+.floating-stage .scene-2{z-index:3;animation:fade-two 20s linear infinite}
+.floating-stage .scene-3{z-index:2;animation:fade-three 20s linear infinite}
+.floating-stage .copy-panel,.cube-face .copy-panel{animation:text-enter 5s ease-out infinite}
 .floating-closing{position:absolute;inset:0;z-index:1}
 .floating-stage .floating-closing .story{opacity:1}
-.floating-object{animation:seal-beat 16s ease-in-out infinite}
-.cube{animation:cube-sequence 16s linear infinite}
-.ad-footer{animation:footer-cycle 16s linear infinite}
+.floating-object{animation:seal-presence 20s linear infinite,seal-float 4s ease-in-out infinite}
+.cube{transform:none;transform-style:flat;animation:none}
+.cube-face{transform:none;opacity:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-origin:center center}
+.cube-face .story{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+body.size-300x2500 .cube-stage{perspective:none}
+body.size-300x2500 .cube-face{transform:none!important}
+.face-1{z-index:4;animation:cube-one 20s linear infinite}
+.face-2{z-index:3;animation:cube-two 20s linear infinite}
+.face-3{z-index:2;animation:cube-three 20s linear infinite}
+.face-4{z-index:1;animation:cube-four 20s linear infinite}
+.ad-footer{animation:footer-cycle 20s linear infinite}
 .top-cta{display:none}
-body.size-300x2500 .top-cta{position:absolute;z-index:21;top:7.8%;left:7%;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:#ffdf00;color:#18130c;border-radius:3px;font-size:18px;font-weight:900;box-shadow:0 4px 14px #0008;animation:footer-cycle 16s linear infinite}
-@keyframes card-one{0%,22.5%{transform:rotateY(0)}28.5%,99.8%{transform:rotateY(-104deg)}100%{transform:rotateY(0)}}
-@keyframes card-two{0%,47.5%{transform:rotateY(0)}53.5%,99.8%{transform:rotateY(-104deg)}100%{transform:rotateY(0)}}
-@keyframes card-three{0%,72.5%{transform:rotateY(0)}78.5%,99.8%{transform:rotateY(-104deg)}100%{transform:rotateY(0)}}
-@keyframes cube-sequence{0%,22.5%{transform:rotateY(0)}28.5%,47.5%{transform:rotateY(-90deg)}53.5%,72.5%{transform:rotateY(-180deg)}78.5%,96%{transform:rotateY(-270deg)}100%{transform:rotateY(-360deg)}}
-@keyframes seal-beat{0%{opacity:0;transform:translateY(-12px) scale(.9)}6%,72.5%{opacity:1;transform:translateY(0) scale(1)}78.5%,100%{opacity:0;transform:translateY(0) scale(1)}}
-@keyframes footer-cycle{0%,72.5%{opacity:1}78.5%,97%{opacity:0}100%{opacity:1}}
-@media (prefers-reduced-motion:reduce){.floating-stage .scene-1,.floating-stage .scene-2,.floating-stage .scene-3,.floating-object,.cube,.ad-footer,.top-cta{animation:none!important}.floating-stage .scene-1{transform:none;opacity:1}.floating-stage .scene-2,.floating-stage .scene-3,.floating-stage .floating-closing{display:none}.floating-object,.ad-footer,.top-cta{opacity:1}}
+body.size-300x2500 .top-cta{position:absolute;z-index:21;top:7.8%;left:7%;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:#ffdf00;color:#18130c;border-radius:3px;font-size:18px;font-weight:900;box-shadow:0 4px 14px #0008;animation:footer-cycle 20s linear infinite,cta-heartbeat 3.2s ease-in-out infinite}
+@keyframes fade-one{0%,23%{opacity:1}27%,99.8%{opacity:0}100%{opacity:1}}
+@keyframes fade-two{0%,48%{opacity:1}52%,99.8%{opacity:0}100%{opacity:1}}
+@keyframes fade-three{0%,73%{opacity:1}77%,99.8%{opacity:0}100%{opacity:1}}
+@keyframes text-enter{0%,7%{opacity:0;transform:translateY(9px)}18%,88%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+@keyframes cube-one{0%,23%{opacity:1;transform:rotateY(0)}27%,99.8%{opacity:0;transform:rotateY(-14deg)}100%{opacity:1;transform:rotateY(0)}}
+@keyframes cube-two{0%,23%{opacity:0;transform:rotateY(14deg)}27%,48%{opacity:1;transform:rotateY(0)}52%,99.8%{opacity:0;transform:rotateY(-14deg)}100%{opacity:0;transform:rotateY(14deg)}}
+@keyframes cube-three{0%,48%{opacity:0;transform:rotateY(14deg)}52%,73%{opacity:1;transform:rotateY(0)}77%,99.8%{opacity:0;transform:rotateY(-14deg)}100%{opacity:0;transform:rotateY(14deg)}}
+@keyframes cube-four{0%,73%{opacity:0;transform:rotateY(14deg)}77%,97%{opacity:1;transform:rotateY(0)}100%{opacity:0;transform:rotateY(-14deg)}}
+@keyframes seal-presence{0%,73%{opacity:1}77%,99.8%{opacity:0}100%{opacity:1}}
+@keyframes seal-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes footer-cycle{0%,70%{opacity:1}73%,97%{opacity:0}100%{opacity:1}}
 
-/* Pulso duplo breve para indicar a ação de clique sem competir com as cartelas. */
+/* Pulso breve do CTA solicitado para reforçar o clique. */
 .cta,.closing-cta{transform-origin:center;animation:cta-heartbeat 3.2s ease-in-out infinite}
-body.size-300x2500 .top-cta{animation:footer-cycle 16s linear infinite,cta-heartbeat 3.2s ease-in-out infinite}
 @keyframes cta-heartbeat{0%,13%,35%,100%{transform:scale(1);box-shadow:0 2px 8px #0006}19%{transform:scale(1.075);box-shadow:0 3px 17px #ffdf0080}27%{transform:scale(1.025);box-shadow:0 3px 11px #ffdf0050}}
-@media (prefers-reduced-motion:reduce){.cta,.closing-cta,body.size-300x2500 .top-cta{animation:none!important;transform:none}}
+@media (prefers-reduced-motion:reduce){.floating-stage .scene-1,.floating-stage .scene-2,.floating-stage .scene-3,.floating-stage .copy-panel,.floating-object,.cube-face,.cube-face .copy-panel,.ad-footer,.top-cta,.cta,.closing-cta{animation:none!important;transform:none!important}.floating-stage .scene-1,.face-1{opacity:1}.floating-stage .scene-2,.floating-stage .scene-3,.floating-stage .floating-closing,.face-2,.face-3,.face-4{display:none}.floating-object,.ad-footer,.top-cta{opacity:1}}

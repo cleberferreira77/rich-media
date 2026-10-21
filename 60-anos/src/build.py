@@ -1,4 +1,5 @@
 from pathlib import Path
+from hashlib import sha256
 from shutil import copy2, copytree, rmtree
 from zipfile import ZipFile, ZIP_DEFLATED
 
@@ -8,6 +9,8 @@ ASSETS = ROOT / "assets"
 PACKAGES = ROOT / "packages"
 SIZES = [(300, 2500), (400, 300), (600, 400)]
 KINDS = ("floating", "cube")
+CSS_VERSION = sha256((SOURCE / "ad.css").read_bytes()).hexdigest()[:8]
+JS_VERSION = sha256((SOURCE / "ad.js").read_bytes()).hexdigest()[:8]
 
 
 def html(kind: str, width: int, height: int) -> str:
@@ -18,9 +21,9 @@ def html(kind: str, width: int, height: int) -> str:
   <meta name="viewport" content="width={width}, initial-scale=1">
   <meta name="ad.size" content="width={width},height={height}">
   <title>Bantrab 60 años — {kind} {width}×{height}</title>
-  <link rel="stylesheet" href="ad.css">
+  <link rel="stylesheet" href="ad.css?v={CSS_VERSION}">
   <script>window.BANTRAB_AD={{kind:"{kind}",width:{width},height:{height}}};</script>
-  <script src="ad.js" defer></script>
+  <script src="ad.js?v={JS_VERSION}" defer></script>
 </head>
 <body></body>
 </html>
