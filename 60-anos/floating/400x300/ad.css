@@ -52,6 +52,32 @@ body.size-400x300 .campaign-logo{left:8%;top:6%}
 body.size-400x300 .copy-panel{left:8%;right:8%;top:47%;bottom:16%}
 body.size-400x300 .ad-footer{padding-left:8%;padding-right:8%}
 
+/* Arte compacta 300×250: foto inteira à direita e cópia em área segura. */
+body.size-300x250 .photo-wrap{inset:0 0 0 32%;height:100%}
+body.size-300x250 .photo{object-position:center center}
+body.size-300x250 .story-03 .photo{object-position:53% center}
+body.size-300x250 .story-04 .photo{object-position:50% center}
+body.size-300x250 .story-05 .photo{object-position:55% center}
+body.size-300x250 .photo-wrap::after{background:linear-gradient(90deg,#171311 0%,rgba(23,19,17,.86) 22%,rgba(23,19,17,.22) 67%,transparent 100%)}
+body.size-300x250 .campaign-logo{top:5%;left:4%;width:24%}
+body.size-300x250 .copy-panel{top:20%;bottom:15%;left:4%;right:auto;width:55%;justify-content:flex-start;gap:3px;text-shadow:0 1px 3px #000}
+body.size-300x250 .copy-panel h1{font-size:15px;line-height:1.04}
+body.size-300x250 .copy-panel h2{font-size:14px;line-height:1.04}
+body.size-300x250 .copy-panel p{font-size:8.5px;line-height:1.13}
+body.size-300x250 .copy-panel .proof{display:block;margin-top:2px}
+body.size-300x250 .copy-panel .proof strong{display:block;font-size:13px}
+body.size-300x250 .copy-panel .proof span{display:block;font-size:8.5px}
+body.size-300x250 .story-05 .copy-panel{gap:2px}
+body.size-300x250 .story-05 .copy-panel h1,body.size-300x250 .story-05 .copy-panel h2{font-size:14px}
+body.size-300x250 .story-05 .copy-panel p{font-size:8.5px}
+body.size-300x250 .floating-object{top:5%;right:3%;width:17%}
+body.size-300x250 .ad-footer{height:14%;min-height:34px}
+body.size-300x250 .ad-footer img{width:46%}
+body.size-300x250 .cta{font-size:10px}
+body.size-300x250 .closing-campaign{width:56%}
+body.size-300x250 .closing-signature{width:55%}
+body.size-300x250 .closing-cta{font-size:11px}
+
 /* Cartelas estáveis; só foto e texto entram suavemente. */
 .floating-stage{background:#171311}
 .floating-stage .story{opacity:1;transform:none;backface-visibility:visible}
@@ -89,3 +115,11 @@ body.size-300x2500 .top-cta{position:absolute;z-index:21;top:7.8%;left:7%;displa
 .cta,.closing-cta{transform-origin:center;animation:cta-heartbeat 3.2s ease-in-out infinite}
 @keyframes cta-heartbeat{0%,13%,35%,100%{transform:scale(1);box-shadow:0 2px 8px #0006}19%{transform:scale(1.075);box-shadow:0 3px 17px #ffdf0080}27%{transform:scale(1.025);box-shadow:0 3px 11px #ffdf0050}}
 @media (prefers-reduced-motion:reduce){.floating-stage .scene-1,.floating-stage .scene-2,.floating-stage .scene-3,.floating-stage .copy-panel,.floating-object,.cube-face,.cube-face .copy-panel,.ad-footer,.top-cta,.cta,.closing-cta{animation:none!important;transform:none!important}.floating-stage .scene-1,.face-1{opacity:1}.floating-stage .scene-2,.floating-stage .scene-3,.floating-stage .floating-closing,.face-2,.face-3,.face-4{display:none}.floating-object,.ad-footer,.top-cta{opacity:1}}
+
+/* Quadros estáticos para conferir cada arte antes de aprovar o movimento. */
+body.static-story .floating-stage .story,body.static-story .cube-face,body.static-story .copy-panel,body.static-story .floating-object,body.static-story .ad-footer,body.static-story .cta{animation:none!important;transform:none!important}
+body.static-story .floating-stage .story,body.static-story .cube-face{opacity:0!important}
+body.static-story .floating-closing{display:none}
+body.static-story-03 .floating-stage .story-03,body.static-story-04 .floating-stage .story-04,body.static-story-05 .floating-stage .story-05{opacity:1!important}
+body.static-story-03 .face-1,body.static-story-04 .face-2,body.static-story-05 .face-3{opacity:1!important}
+body.static-story .floating-object,body.static-story .ad-footer{opacity:1!important}

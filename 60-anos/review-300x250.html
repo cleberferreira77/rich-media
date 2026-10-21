@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Conferência estática — Bantrab 300×250</title>
+  <style>
+    :root{font-family:Arial,Helvetica,sans-serif;color:#f8f8f8;background:#101113}*{box-sizing:border-box}body{margin:0;padding:30px clamp(16px,4vw,50px)}h1{margin:0 0 8px;font-size:clamp(25px,4vw,42px)}p{margin:0 0 26px;color:#aeb0b3;line-height:1.5;max-width:680px}h2{margin:35px 0 14px;font-size:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}.card{padding:12px;border:1px solid #34363a;background:#1b1d20;border-radius:8px;overflow:auto}.card b{display:block;margin-bottom:10px;font-size:13px}.card iframe{display:block;width:300px;height:250px;border:0;background:#171311}a{color:#ffdf00}
+  </style>
+</head>
+<body>
+  <h1>Bantrab · conferência 300×250</h1>
+  <p>As três artes de cada formato estão paradas para conferir enquadramento, textos e margens. <a href="./preview.html">Ver animações</a>.</p>
+  <h2>Floating Object</h2>
+  <div class="grid" id="floating"></div>
+  <h2>3D Cube</h2>
+  <div class="grid" id="cube"></div>
+  <script>
+    const stories=['03','04','05'];
+    for(const kind of ['floating','cube'])document.getElementById(kind).innerHTML=stories.map(story=>`<div class="card"><b>Arte ${story}</b><iframe title="${kind}, arte ${story}" src="./${kind}/300x250/index.html?story=${story}"></iframe></div>`).join('');
+  </script>
+</body>
+</html>

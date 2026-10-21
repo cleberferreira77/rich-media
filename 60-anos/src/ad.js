@@ -1,5 +1,7 @@
 (() => {
   const config = window.BANTRAB_AD;
+  const requestedStory = new URLSearchParams(location.search).get('story');
+  const staticStory = ['03', '04', '05'].includes(requestedStory) ? requestedStory : null;
   const destination = window.clickTag || window.clickTAG || 'http://bantrab.com/';
   const asset = (name) => `assets/${name}`;
 
@@ -58,7 +60,7 @@
     </div></div>`;
 
   document.title = `Bantrab 60 años — ${config.kind === 'cube' ? '3D Cube' : 'Floating Object'} ${config.width}×${config.height}`;
-  document.body.className = `${config.kind} size-${config.width}x${config.height}`;
+  document.body.className = `${config.kind} size-${config.width}x${config.height}${staticStory ? ` static-story static-story-${staticStory}` : ''}`;
   document.body.innerHTML = `
     <main class="ad" style="--ad-width:${config.width}px;--ad-height:${config.height}px">
       ${config.kind === 'cube' ? cube : floating}

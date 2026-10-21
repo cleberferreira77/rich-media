@@ -14,16 +14,17 @@
   <main>
     <p class="eyebrow">Campaña institucional</p>
     <h1>Tuyo desde hace 60 años</h1>
-    <p class="lead">As três histórias do material do cliente ganham movimento em dois formatos. Clique nas peças para abrir o destino informado. Cada peça pode ser baixada em ZIP no cartão correspondente.</p>
+    <p class="lead">As três histórias do material do cliente ganham movimento em dois formatos. Clique nas peças para abrir o destino informado. Cada peça pode ser baixada em ZIP no cartão correspondente. <a id="review-link" href="./review-300x250.html" style="color:#ffdf00">Conferir as artes 300×250 sem animação ↗</a></p>
     <div class="toolbar"><div class="controls"><button class="active" data-bg="white">Branco</button><button data-bg="grey">Cinza</button><button data-bg="black">Preto</button><button id="replay">Reiniciar animações</button></div><span class="count">6 peças · 3 dimensões</span></div>
     <section class="section"><div class="section-head"><h2>Floating Object</h2><p>Selo 60 años em movimento · histórias em sequência</p></div><div class="grid" id="floating-grid"></div></section>
     <section class="section"><div class="section-head"><h2>3D Cube</h2><p>Três histórias + fechamento com CTA</p></div><div class="grid" id="cube-grid"></div></section>
   </main>
   <footer>Preview visual · a validação final de peso, clickTag e formatos depende das especificações do veículo.</footer>
   <script>
-    const sizes=[[300,2500],[400,300],[600,400]];
-    const creativeVersion='20261021-f';
+    const sizes=[[300,250],[400,300],[600,400]];
+    const creativeVersion='20261021-g';
     const assetBase=location.pathname.startsWith('/p/')?'/60-anos/':'./';
+    document.querySelector('#review-link').href=assetBase+'review-300x250.html';
     const card=(kind,[width,height])=>`<article class="card"><div class="card-head"><b>${width} × ${height}</b><span>HTML5 · ${kind==='cube'?'3D Cube':'Floating Object'}</span></div><div class="stage ${height>1000?'tall':''}"><iframe title="${kind} ${width}×${height}" src="${assetBase}${kind}/${width}x${height}/index.html?v=${creativeVersion}" width="${width}" height="${height}" loading="lazy"></iframe></div><div class="card-foot"><a href="${assetBase}packages/bantrab-60-anos-${kind}-${width}x${height}.zip" download>Baixar ZIP ↓</a><a href="${assetBase}${kind}/${width}x${height}/index.html?v=${creativeVersion}" target="_blank" rel="noopener">Abrir em tamanho real ↗</a></div></article>`;
     document.querySelector('#floating-grid').innerHTML=sizes.map(size=>card('floating',size)).join('');
     document.querySelector('#cube-grid').innerHTML=sizes.map(size=>card('cube',size)).join('');
