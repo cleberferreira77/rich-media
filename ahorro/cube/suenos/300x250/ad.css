@@ -12,3 +12,25 @@
 .static-face .cube,.static-face .message,.static-face .float-badge,.static-face .cta{animation:none!important;transform:none!important}
 .static-face .cube-face{transform:none!important;opacity:0!important}
 .static-front .face-1,.static-offer .face-2{opacity:1!important}
+
+/* Enquadramento 9:16 preservando a fotografia e a leitura do PSD original. */
+.size-1080x1920 .photo{inset:0;background-position:center center}
+.size-1080x1920 .scene-front .shade{background:linear-gradient(180deg,rgba(3,21,22,.08) 0%,transparent 33%,rgba(3,21,22,.13) 48%,rgba(3,21,22,.48) 64%,rgba(3,21,22,.67) 100%)}
+.size-1080x1920 .title-art{top:51%;left:8%;width:84%}
+.size-1080x1920 .message{top:65%;left:8%;width:84%;text-align:center;text-shadow:0 2px 9px #001719b3}
+.size-1080x1920 .promise{font-size:54px;line-height:1.1}
+.size-1080x1920 .rate{font-size:38px;margin-top:24px;padding:12px 19px;border-radius:9px}
+.size-1080x1920 .float-badge{top:3%;right:5%;width:14%}
+.size-1080x1920 .float-badge span{font-size:17px}
+.size-1080x1920 .float-badge strong{font-size:47px}
+.size-1080x1920 .footer{height:11%;padding:0 8%}
+.size-1080x1920 .footer img{width:43%}
+.size-1080x1920 .cta{font-size:28px;padding:17px 19px;border-radius:8px}
+.size-1080x1920 .cube-stage{perspective:2800px}
+.size-1080x1920 .scene-offer{gap:4%}
+.size-1080x1920 .scene-offer .final-title{width:78%}
+.size-1080x1920 .scene-offer .final-promise{font-size:52px;width:80%}
+.size-1080x1920 .scene-offer .final-rate{font-size:38px}
+.size-1080x1920 .scene-offer .final-brand{width:45%}
+.size-300x250 .cta{font-size:10px}
+.scene-offer .final-brand{display:none}

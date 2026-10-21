@@ -1,6 +1,6 @@
 # Bantrab Ahorro — HTML5 Rich Media
 
-Dois anúncios independentes (`futuro` e `suenos`). Cada um tem versões Floating Object e 3D Cube em 300×250, 400×300 e 600×400 px: 12 arquivos de entrega.
+Dois anúncios independentes (`futuro` e `suenos`). Cada um tem versões Floating Object e 3D Cube em 300×250, 400×300, 600×400 e 1080×1920 px: 16 arquivos de entrega.
 
 - Preview: `/p/bantrab-ahorro`
 - Cartelas estáticas: `/ahorro/review.html`

@@ -6,7 +6,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / 'src'
 PACKAGES = ROOT / 'packages'
-SIZES = ((300, 250), (400, 300), (600, 400))
+SIZES = ((300, 250), (400, 300), (600, 400), (1080, 1920))
 KINDS = ('floating', 'cube')
 VARIANTS = ('futuro', 'suenos')
 CSS_VERSION = sha256((SOURCE / 'ad.css').read_bytes()).hexdigest()[:8]
