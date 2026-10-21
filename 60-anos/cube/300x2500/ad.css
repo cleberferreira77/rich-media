@@ -66,7 +66,6 @@ body.size-400x300 .ad-footer{padding-left:8%;padding-right:8%}
 .cube-face{transform:none;opacity:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-origin:center center}
 .cube-face .story{backface-visibility:hidden;-webkit-backface-visibility:hidden}
 body.size-300x2500 .cube-stage{perspective:none}
-body.size-300x2500 .cube-face{transform:none!important}
 .face-1{z-index:4;animation:cube-one 20s linear infinite}
 .face-2{z-index:3;animation:cube-two 20s linear infinite}
 .face-3{z-index:2;animation:cube-three 20s linear infinite}
@@ -78,10 +77,10 @@ body.size-300x2500 .top-cta{position:absolute;z-index:21;top:7.8%;left:7%;displa
 @keyframes fade-two{0%,48%{opacity:1}52%,99.8%{opacity:0}100%{opacity:1}}
 @keyframes fade-three{0%,73%{opacity:1}77%,99.8%{opacity:0}100%{opacity:1}}
 @keyframes text-enter{0%,7%{opacity:0;transform:translateY(9px)}18%,88%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
-@keyframes cube-one{0%,23%{opacity:1;transform:rotateY(0)}27%,99.8%{opacity:0;transform:rotateY(-14deg)}100%{opacity:1;transform:rotateY(0)}}
-@keyframes cube-two{0%,23%{opacity:0;transform:rotateY(14deg)}27%,48%{opacity:1;transform:rotateY(0)}52%,99.8%{opacity:0;transform:rotateY(-14deg)}100%{opacity:0;transform:rotateY(14deg)}}
-@keyframes cube-three{0%,48%{opacity:0;transform:rotateY(14deg)}52%,73%{opacity:1;transform:rotateY(0)}77%,99.8%{opacity:0;transform:rotateY(-14deg)}100%{opacity:0;transform:rotateY(14deg)}}
-@keyframes cube-four{0%,73%{opacity:0;transform:rotateY(14deg)}77%,97%{opacity:1;transform:rotateY(0)}100%{opacity:0;transform:rotateY(-14deg)}}
+@keyframes cube-one{0%,21.5%{opacity:1;transform:rotateY(0)}24.5%,99.8%{opacity:0;transform:rotateY(-82deg)}100%{opacity:1;transform:rotateY(0)}}
+@keyframes cube-two{0%,22.5%{opacity:0;transform:rotateY(82deg)}25.5%,46.5%{opacity:1;transform:rotateY(0)}49.5%,99.8%{opacity:0;transform:rotateY(-82deg)}100%{opacity:0;transform:rotateY(82deg)}}
+@keyframes cube-three{0%,47.5%{opacity:0;transform:rotateY(82deg)}50.5%,71.5%{opacity:1;transform:rotateY(0)}74.5%,99.8%{opacity:0;transform:rotateY(-82deg)}100%{opacity:0;transform:rotateY(82deg)}}
+@keyframes cube-four{0%,72.5%{opacity:0;transform:rotateY(82deg)}75.5%,96.5%{opacity:1;transform:rotateY(0)}100%{opacity:0;transform:rotateY(-82deg)}}
 @keyframes seal-presence{0%,73%{opacity:1}77%,99.8%{opacity:0}100%{opacity:1}}
 @keyframes seal-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes footer-cycle{0%,70%{opacity:1}73%,97%{opacity:0}100%{opacity:1}}
