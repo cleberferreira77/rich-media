@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview — Bantrab 60 años</title>
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    :root{font-family:Arial,Helvetica,sans-serif;color:#f7f7f7;background:#0b0c0d}*{box-sizing:border-box}body{margin:0}header{padding:26px clamp(18px,3vw,42px);border-bottom:1px solid #292b2e;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:13px;font-size:14px;letter-spacing:.02em}.brand .mark{width:20px;height:20px;background:#ffdf00;clip-path:polygon(50% 0,100% 100%,0 100%)}.brand b{font-size:16px}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#777;font-size:12px}main{max-width:1480px;margin:auto;padding:44px clamp(18px,3vw,42px) 90px}.eyebrow{margin:0 0 12px;color:#ffdf00;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}h1{margin:0;font-size:clamp(30px,4vw,54px);letter-spacing:-.05em;line-height:1}p.lead{max-width:680px;color:#aeb0b3;line-height:1.5;font-size:15px;margin:17px 0 28px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 0;border-top:1px solid #25272a;border-bottom:1px solid #25272a;margin-bottom:36px}.controls{display:flex;gap:8px;flex-wrap:wrap}button{appearance:none;border:1px solid #3b3e42;background:#17191c;color:#eee;padding:9px 14px;border-radius:7px;font-size:13px;cursor:pointer}button:hover,button.active{background:#ffdf00;border-color:#ffdf00;color:#151515}.count{color:#888;font-size:13px}.section{margin-top:45px}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:18px}.section h2{margin:0;font-size:23px;letter-spacing:-.025em}.section p{margin:0;color:#777;font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:22px}.card{border:1px solid #303337;background:#131517;border-radius:10px;overflow:hidden}.card-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 15px;font-size:13px}.card-head b{font-size:15px}.card-head span{color:#92969b}.stage{background:#fff;min-height:330px;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:20px}.stage.tall{max-height:650px;justify-content:flex-start}.stage iframe{display:block;flex:none;border:0;box-shadow:0 2px 18px #0002}.stage.grey{background:#d2d2d2}.stage.black{background:#050505}.card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px 15px}.card-foot small{color:#777}.card-foot a{color:#ffdf00;text-decoration:none;font-size:13px;font-weight:700}.card-foot a:hover{text-decoration:underline}footer{color:#777;border-top:1px solid #25272a;padding:25px clamp(18px,3vw,42px);font-size:12px}
+  </style>
+</head>
+<body>
+  <header><div class="brand"><span class="mark"></span><b>BANTRAB</b><span>/</span><span>60 años</span></div><span class="mono">rich media preview</span></header>
+  <main>
+    <p class="eyebrow">Campaña institucional</p>
+    <h1>Tuyo desde hace 60 años</h1>
+    <p class="lead">As três histórias do material do cliente ganham movimento em dois formatos. Clique nas peças para abrir o destino informado. Cada peça pode ser baixada em ZIP no cartão correspondente.</p>
+    <div class="toolbar"><div class="controls"><button class="active" data-bg="white">Branco</button><button data-bg="grey">Cinza</button><button data-bg="black">Preto</button><button id="replay">Reiniciar animações</button></div><span class="count">6 peças · 3 dimensões</span></div>
+    <section class="section"><div class="section-head"><h2>Floating Object</h2><p>Selo 60 años em movimento · histórias em sequência</p></div><div class="grid" id="floating-grid"></div></section>
+    <section class="section"><div class="section-head"><h2>3D Cube</h2><p>Três histórias + fechamento com CTA</p></div><div class="grid" id="cube-grid"></div></section>
+  </main>
+  <footer>Preview visual · a validação final de peso, clickTag e formatos depende das especificações do veículo.</footer>
+  <script>
+    const sizes=[[300,2500],[400,300],[600,400]];
+    const card=(kind,[width,height])=>`<article class="card"><div class="card-head"><b>${width} × ${height}</b><span>HTML5 · ${kind==='cube'?'3D Cube':'Floating Object'}</span></div><div class="stage ${height>1000?'tall':''}"><iframe title="${kind} ${width}×${height}" src="/60-anos/${kind}/${width}x${height}/index.html" width="${width}" height="${height}" loading="lazy"></iframe></div><div class="card-foot"><a href="/60-anos/packages/bantrab-60-anos-${kind}-${width}x${height}.zip" download>Baixar ZIP ↓</a><a href="/60-anos/${kind}/${width}x${height}/index.html" target="_blank" rel="noopener">Abrir em tamanho real ↗</a></div></article>`;
+    document.querySelector('#floating-grid').innerHTML=sizes.map(size=>card('floating',size)).join('');
+    document.querySelector('#cube-grid').innerHTML=sizes.map(size=>card('cube',size)).join('');
+    document.querySelectorAll('[data-bg]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-bg]').forEach(b=>b.classList.remove('active'));button.classList.add('active');document.querySelectorAll('.stage').forEach(stage=>{stage.classList.remove('grey','black');if(button.dataset.bg!=='white')stage.classList.add(button.dataset.bg)})}));
+    document.querySelector('#replay').addEventListener('click',()=>document.querySelectorAll('iframe').forEach(frame=>{const url=new URL(frame.src);url.searchParams.set('replay',Date.now());frame.src=url.toString()}));
+  </script>
+</body>
+</html>
