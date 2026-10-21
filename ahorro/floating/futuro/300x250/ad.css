@@ -34,3 +34,20 @@
 .size-1080x1920 .scene-offer .final-brand{width:45%}
 .size-300x250 .cta{font-size:10px}
 .scene-offer .final-brand{display:none}
+
+/* Cubo com duas faces: mensagem na foto, ação na face azul. */
+.kind-cube .footer .cta{display:none}
+.kind-cube .footer{animation:cube-footer 14s linear infinite}
+.kind-cube .cube{animation:cube-two-face 14s ease-in-out infinite}
+.scene-offer .final-brand{display:block;width:58%;max-height:25%;object-fit:contain}
+.blue-cta{position:relative;z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:.35em;padding:.7em .95em;background:#fff;color:#075256;border-radius:5px;font-size:clamp(12px,3vw,23px);font-weight:900;white-space:nowrap;box-shadow:0 4px 18px #001d1e99;animation:heartbeat 3.4s ease-in-out infinite}
+.blue-cta b{font-size:1.18em}
+.size-300x250 .scene-offer .final-brand{width:55%}
+.size-300x250 .blue-cta{font-size:12px}
+.size-1080x1920 .scene-offer .final-brand{width:62%}
+.size-1080x1920 .blue-cta{font-size:42px;padding:18px 30px;border-radius:9px}
+@keyframes cube-two-face{0%,42%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(0deg)}50%,92%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(-90deg)}100%{transform:translateZ(calc(var(--ad-width)/-2)) rotateY(0deg)}}
+@keyframes cube-footer{0%,44%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+.static-face.kind-cube .footer{animation:none!important}
+.static-offer.kind-cube .footer{opacity:0!important}
+@media (prefers-reduced-motion:reduce){.kind-cube .cube,.kind-cube .footer,.blue-cta{animation:none!important}.kind-cube .footer{opacity:1}}

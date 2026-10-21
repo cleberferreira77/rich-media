@@ -13,8 +13,8 @@
   const line = variant === 'futuro' ? 'respaldar su futuro' : 'hacer realidad tus sueños';
   const photo = variant === 'futuro' ? 'familia.jpg' : 'suenos.jpg';
   const first = card('front', photo, line);
-  const offer = `<section class="scene scene-offer" aria-label="Cuenta de Ahorro TUYA para ${line}"><div class="final-glow"></div><img class="final-title" src="assets/cuenta-ahorro.png" alt="Cuenta de AHORRO"><div class="final-promise"><strong>TUYA</strong> para ${line}</div><div class="final-rate">con una tasa de hasta el <strong>6%</strong></div><img class="final-brand" src="assets/bantrab-60.png" alt="60 años Bantrab"></section>`;
-  const scenes = kind === 'cube' ? `<div class="cube"><div class="cube-face face-1">${first}</div><div class="cube-face face-2">${offer}</div><div class="cube-face face-3">${first}</div><div class="cube-face face-4">${offer}</div></div>` : first;
+  const offer = `<section class="scene scene-offer" aria-label="Bantrab: solicita tu cuenta aquí"><div class="final-glow"></div><img class="final-brand" src="assets/bantrab-60.png" alt="60 años Bantrab"><span class="blue-cta">Solicita tu cuenta aquí <b aria-hidden="true">↗</b></span></section>`;
+  const scenes = kind === 'cube' ? `<div class="cube"><div class="cube-face face-1">${first}</div><div class="cube-face face-2">${offer}</div></div>` : first;
   document.body.innerHTML = `<main class="ad" style="--ad-width:${width}px;--ad-height:${height}px">
     <div class="stage ${kind === 'cube' ? 'cube-stage' : 'floating-stage'}">${scenes}</div>
     <div class="footer"><img src="assets/bantrab-60.png" alt="60 años Bantrab"><span class="cta">Solicita tu cuenta aquí <b aria-hidden="true">↗</b></span></div>
