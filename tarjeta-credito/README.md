@@ -1,6 +1,6 @@
 # Bantrab · Tarjeta de Crédito
 
-Peça produzida a partir do PSD `Slide 10 ST.psd`, em Floating Object e 3D Cube, nos formatos 300×250, 400×300, 600×400 e 1080×1920 px.
+Peça produzida a partir do PSD `Slide 10 ST.psd`, em Floating Object e 3D Cube, nos formatos 300×250, 400×300 e 600×400 px.
 
 Destino de clique: https://experienciabantrab.com/solicita-tu-tarjeta-de-credito/
 

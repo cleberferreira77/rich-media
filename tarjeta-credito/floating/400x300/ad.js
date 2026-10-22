@@ -15,9 +15,3 @@ document.body.className = `size-${width}x${height} kind-${kind}`;
 document.body.innerHTML = `<main class="ad"><div class="stage">${inner}</div><a class="click-area" href="${destination}" target="_blank" rel="noopener noreferrer" aria-label="Solicita tu Tarjeta de Crédito Bantrab"></a></main>`;
 if (new URLSearchParams(location.search).has('static')) document.body.classList.add('static');
 if (new URLSearchParams(location.search).get('face') === 'action') document.body.classList.add('show-action');
-const scale = Number(new URLSearchParams(location.search).get('scale'));
-if (scale > 0 && scale < 1) {
-  const ad = document.querySelector('.ad');
-  ad.style.transform = `scale(${scale})`;
-  ad.style.transformOrigin = 'top left';
-}
