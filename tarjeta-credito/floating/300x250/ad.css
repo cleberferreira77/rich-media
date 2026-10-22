@@ -5,3 +5,16 @@
 .size-300x250 .action{gap:3%}.size-300x250 .action-cards{width:50%}.size-300x250 .action-title{font-size:28px}.size-300x250 .action-cta{font-size:13px;padding:7px 11px}.size-300x250 .action-brand{width:31%}
 .size-400x300 .action-cards{width:48%}.size-400x300 .action-title{font-size:35px}.size-400x300 .action-cta{font-size:16px}.size-400x300 .action-brand{width:28%}
 .size-600x400 .action-cards{width:43%}.size-600x400 .action-title{font-size:45px}.size-600x400 .action-cta{font-size:22px}.size-600x400 .action-brand{width:26%}
+/* Cartões à esquerda e CTA à direita, preservando a modelo. */
+.front .cards{left:5%;right:auto;bottom:14%}
+.front .front-cta{left:auto;right:5%;bottom:18%;padding:5px 8px;font-size:12px}
+.size-300x250 .front .cards{width:30%}
+.size-300x250 .front .front-cta{font-size:9px;bottom:19%;padding:5px 7px}
+.size-400x300 .front .cards{width:27%}
+.size-400x300 .front .front-cta{font-size:11px}
+.size-600x400 .front .cards{width:25%}
+.size-600x400 .front .front-cta{font-size:14px}
+.size-1080x1920 .front .shade{background:linear-gradient(180deg,transparent 0%,#041d230a 43%,#041d23ad 61%,#041d2385 100%)}
+.size-1080x1920 .front .offer-copy{top:62%}
+.size-1080x1920 .front .cards{left:7%;bottom:18%;width:31%}
+.size-1080x1920 .front .front-cta{right:8%;bottom:19%;font-size:28px;padding:10px 15px}
