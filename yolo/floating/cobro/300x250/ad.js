@@ -7,7 +7,7 @@ const logo=kind==='cube'&&variant==='transfiero'
 const stores=`<div class="stores">${asset('google-play.png','store','Google Play')}${asset('app-store.png','store','App Store')}</div>`;
 const download=`<div class="download-box">${asset('yolo-app-icon.png','app-icon','Aplicación YOLO')}<strong>Descárgala</strong>${stores}</div>`;
 const brand=`<div class="brand-badge">${asset('bantrab-60.png','brand','60 años Bantrab')}</div>`;
-const transfiero=`<div class="face-content front transfiero"><div class="photo"></div><div class="shade"></div><div class="content">${logo}<div class="hero-word">transfiero</div><div class="here pink">aquí y ahora</div><div class="support-box"><span class="typed-white">Disfruta </span><strong class="typed-color">sin filas ni complicaciones.</strong></div>${download}</div>${brand}</div>`;
+const transfiero=`<div class="face-content front transfiero"><div class="photo"></div><div class="shade"></div><div class="content">${logo}<div class="hero-word">transfiero</div><div class="here pink">aquí y ahora</div><div class="support-box"><span class="typed-white">Disfruta </span><strong class="typed-color">sin filas&#10;ni complicaciones.</strong></div>${download}</div></div>`;
 const cobroFront=`<div class="face-content front cobro"><div class="photo"></div><div class="shade"></div><div class="content">${logo}<div class="hero-word">cobro</div><div class="here yellow">aquí y ahora</div><div class="line line-1">Divide la cuenta fácil.</div><div class="line line-2">Envía tu link <strong>y listo.</strong></div>${kind==='floating'?download:''}</div>${brand}</div>`;
 const cobroAction=`<div class="face-content action"><div class="action-glow"></div>${asset('yolo-logo.png','action-logo','YOLO')}${download}${brand}</div>`;
 const scenes=variant==='transfiero'?transfiero:(kind==='cube'?`<div class="cube"><div class="cube-face face-1">${cobroFront}</div><div class="cube-face face-2">${cobroAction}</div><div class="cube-face face-3">${cobroFront}</div><div class="cube-face face-4">${cobroAction}</div></div>`:cobroFront);
@@ -20,7 +20,7 @@ if(kind==='floating'&&variant==='transfiero'&&!params.has('static')){
  const white=document.querySelector('.typed-white');
  const color=document.querySelector('.typed-color');
  const first='Disfruta ';
- const second='sin filas ni complicaciones.';
+ const second='sin filas\nni complicaciones.';
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(reduced){white.textContent=first;color.textContent=second;document.body.classList.add('ready')}
  else{
