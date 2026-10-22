@@ -1,1 +1,18 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bantrab · Connacionales</title><style>*{box-sizing:border-box}body{margin:0;background:#142024;color:#fff;font:16px Arial,sans-serif}header{padding:26px 32px;border-bottom:1px solid #405056}h1{margin:0 0 6px;font-size:30px}p{margin:0;color:#c0cbce}main{padding:30px 32px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}.tile{background:#203237;padding:12px;border-radius:10px;border:1px solid #405056}.tile strong{display:block;margin-bottom:10px}iframe{border:0;display:block}.tile a{display:inline-block;margin-top:10px;color:#5de2dd}</style></head><body><header><h1>Connacionales · Slide 5</h1><p>Prévia HTML5 · 300×250, 400×300 e 600×400</p></header><main id="list"></main><script>const base=location.pathname.startsWith('/p/')?'/connacionales/':'./';document.getElementById('list').innerHTML=[[300,250],[400,300],[600,400]].map(([w,h])=>`<div class="tile"><strong>${w}×${h}</strong><iframe title="Connacionales ${w}×${h}" src="${base}${w}x${h}/index.html" width="${w}" height="${h}"></iframe><a href="${base}packages/bantrab-connacionales-${w}x${h}.zip" download>Baixar ZIP</a></div>`).join('')</script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bantrab · Connacionales</title>
+  <style>*{box-sizing:border-box}body{margin:0;background:#142024;color:#fff;font:16px Arial,sans-serif}header{padding:26px 32px;border-bottom:1px solid #405056}h1{margin:0 0 6px;font-size:30px}p{margin:0;color:#c0cbce}main{padding:30px 32px}h2{font-size:22px;margin:12px 0 18px}.grid{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;margin-bottom:36px}.tile{background:#203237;padding:12px;border-radius:10px;border:1px solid #405056}.tile strong{display:block;margin-bottom:10px}iframe{border:0;display:block}.tile a{display:inline-block;margin-top:10px;color:#5de2dd}</style>
+</head>
+<body>
+  <header><h1>Connacionales · Slide 5</h1><p>Floating Object e 3D Cube · 300×250, 400×300 e 600×400</p></header>
+  <main id="list"></main>
+  <script>
+    const base=location.pathname.startsWith('/p/')?'/connacionales/':'./';
+    const sizes=[[300,250],[400,300],[600,400]];
+    document.getElementById('list').innerHTML=[['Floating Object','',false],['3D Cube','cube/',true]].map(([label,path,cube])=>`<section><h2>${label}</h2><div class="grid">${sizes.map(([w,h])=>`<div class="tile"><strong>${w}×${h}</strong><iframe title="${label} ${w}×${h}" src="${base}${path}${w}x${h}/index.html" width="${w}" height="${h}"></iframe><a href="${base}packages/bantrab-connacionales-${cube?'cube-':''}${w}x${h}.zip" download>Baixar ZIP</a></div>`).join('')}</div></section>`).join('');
+  </script>
+</body>
+</html>
