@@ -4,6 +4,7 @@
     { "source": "/p/bantrab-tarjeta", "destination": "/preview.html" },
     { "source": "/p/bantrab-60-anos", "destination": "/60-anos/preview.html" },
     { "source": "/p/bantrab-ahorro", "destination": "/ahorro/preview.html" },
-    { "source": "/p/bantrab-tarjeta-credito", "destination": "/tarjeta-credito/preview.html" }
+    { "source": "/p/bantrab-tarjeta-credito", "destination": "/tarjeta-credito/preview.html" },
+    { "source": "/p/bantrab-yolo", "destination": "/yolo/preview.html" }
   ]
 }
