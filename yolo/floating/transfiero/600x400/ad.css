@@ -11,11 +11,11 @@
 .front .content>.hero-word{line-height:.96;white-space:nowrap}
 .front .content>.here{line-height:1;padding:.005em .35em}
 .front .content>.download-box{margin:0;min-height:0;display:flex}
-.variant-transfiero .content>.yolo-logo,.variant-transfiero .content>.yolo-letters{left:8%;top:24.6%;width:76%}
-.variant-transfiero .content>.hero-word{left:0;top:42%;font-size:calc(var(--ad-height)*.128)}
-.variant-transfiero .content>.here{left:7%;top:55%;font-size:calc(var(--ad-height)*.07)}
-.variant-transfiero .content>.support-box{left:7%;top:64.5%;width:90%;height:15%;min-height:0;padding:3% 3%;font-size:calc(var(--ad-height)*.05);line-height:1.06}
-.variant-transfiero .content>.download-box{left:7%;top:82%;width:85%;height:15%;padding:1.8% 3%;gap:2%}
+.variant-transfiero .content>.yolo-logo,.variant-transfiero .content>.yolo-letters{left:50%;top:13.5%;width:76%;translate:-50% 0}
+.variant-transfiero .content>.hero-word{left:50%;top:30.5%;translate:-50% 0;font-size:calc(var(--ad-height)*.128);text-align:center}
+.variant-transfiero .content>.here{left:50%;top:43.5%;translate:-50% 0;font-size:calc(var(--ad-height)*.07);text-align:center}
+.variant-transfiero .content>.support-box{left:50%;top:53%;translate:-50% 0;width:90%;height:15%;min-height:0;padding:3% 3%;font-size:calc(var(--ad-height)*.05);line-height:1.06;text-align:center}
+.variant-transfiero .content>.download-box{left:50%;top:70.5%;translate:-50% 0;width:85%;height:15%;padding:1.8% 3%;gap:2%}
 .variant-transfiero .download-box strong{font-size:calc(var(--ad-height)*.056)}
 .variant-cobro .content>.yolo-logo{left:9%;top:7.7%;width:63%}
 .variant-cobro .content>.hero-word{left:13%;top:22.5%;font-size:calc(var(--ad-height)*.125)}
