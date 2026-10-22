@@ -23,8 +23,9 @@
       <img class="support" src="assets/support.png" alt="Descárgala y crea tu cuenta con el apoyo de un asesor.">
       <img class="brands" src="assets/bottom-logos.png" alt="Remesas Bantrab. Guatemaltecos hechos de valor.">
     </div>
+    <div class="fold" aria-hidden="true"></div>
     <a class="click-area" href="https://www.bantrab.com/" target="_blank" rel="noopener noreferrer" aria-label="Conoce más aquí"></a>
   </main>
-  <script>if(new URLSearchParams(location.search).get('face')==='action')document.body.classList.add('show-action');else if(new URLSearchParams(location.search).get('face')==='front')document.body.classList.add('show-front')</script>
+  <script>const face=new URLSearchParams(location.search).get('face');if(['action','front','mid'].includes(face))document.body.classList.add('show-'+face)</script>
 </body>
 </html>
