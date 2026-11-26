@@ -6,6 +6,7 @@
     { "source": "/p/bantrab-ahorro", "destination": "/ahorro/preview.html" },
     { "source": "/p/bantrab-tarjeta-credito", "destination": "/tarjeta-credito/preview.html" },
     { "source": "/p/bantrab-yolo", "destination": "/yolo/preview.html" },
-    { "source": "/p/bantrab-connacionales", "destination": "/connacionales/preview.html" }
+    { "source": "/p/bantrab-connacionales", "destination": "/connacionales/preview.html" },
+    { "source": "/p/bantrab-seguros", "destination": "/seguros-bantrab/preview.html" }
   ]
 }

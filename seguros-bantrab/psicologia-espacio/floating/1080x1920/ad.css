@@ -1,0 +1,23 @@
+*{box-sizing:border-box}html,body{margin:0;width:var(--w);height:var(--h);overflow:hidden}
+.ad{position:relative;width:var(--w);height:var(--h);overflow:hidden;background:#009c99;isolation:isolate}
+.panel,.face{position:absolute;inset:0;overflow:hidden;background:#009c99 url('assets/background.jpg') center center/cover no-repeat}
+.ad.vertical .panel,.ad.vertical .face{background-size:100% 100%}
+.art{position:absolute;display:block;height:auto;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.click-area{position:absolute;inset:0;z-index:30;cursor:pointer;display:block}
+.click-area:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.floating .float-object{animation:float 3.6s ease-in-out 3}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.carousel .panel{backface-visibility:hidden}
+.carousel .panel.front{animation:front-slide 14s ease-in-out 1 forwards}
+.carousel .panel.offer{animation:offer-slide 14s ease-in-out 1 forwards}
+@keyframes front-slide{0%,19%,49%,69%{opacity:1;transform:translateX(0)}25%,44%,75%,100%{opacity:0;transform:translateX(-18px)}}
+@keyframes offer-slide{0%,19%,49%,69%{opacity:0;transform:translateX(18px)}25%,44%,75%,100%{opacity:1;transform:translateX(0)}}
+.cube{perspective:1200px}
+.cube-stage{position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg);animation:cube-spin 14s ease-in-out 1 forwards}
+.cube .face{backface-visibility:hidden;transform-style:preserve-3d}
+.cube .face:nth-child(1){transform:rotateY(0deg) translateZ(var(--depth))}
+.cube .face:nth-child(2){transform:rotateY(90deg) translateZ(var(--depth))}
+.cube .face:nth-child(3){transform:rotateY(180deg) translateZ(var(--depth))}
+.cube .face:nth-child(4){transform:rotateY(270deg) translateZ(var(--depth))}
+@keyframes cube-spin{0%,19%{transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg)}25%,44%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-90deg)}50%,69%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-180deg)}75%,100%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-270deg)}}
+@media(prefers-reduced-motion:reduce){.floating .float-object,.carousel .panel,.cube-stage{animation:none}.carousel .panel.offer{display:none}.cube-stage{transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg)}}
