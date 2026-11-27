@@ -8,6 +8,8 @@ En Carousel y 3D Cube, cada arte presenta dos cuadros: primero la frase principa
 
 Subir **un ZIP individual** por ubicación. Cada ZIP incluye `index.html` en la raíz. No subir este paquete general como una única creatividad.
 
+Los ZIPs individuales de esta entrega optimizada pesan menos de 165 KB cada uno. Los ZIPs de transporte solo sirven para enviar varios anuncios juntos y deben descomprimirse antes de subirlos a la plataforma.
+
 ## Clic y seguimiento
 
 El enlace cubre toda la pieza. `exit.js` usa `clickTag` o `clickTAG` de la URL del iframe y acepta las variables globales del mismo nombre. Si el rastreador termina en `r=`, adjunta el destino aprobado. Sin parámetro de plataforma, utiliza como alternativa de prueba:
