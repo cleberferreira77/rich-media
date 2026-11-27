@@ -2,6 +2,8 @@
 
 Tres artes independientes, cada uno en Floating Object, Carousel y 3D Cube, en 300×250, 400×300, 600×400 y 1080×1920.
 
+En Carousel y 3D Cube, cada arte presenta dos cuadros: primero la frase principal y después el seguro con precio y llamada. La secuencia avanza siempre hacia la izquierda y se repite sin retroceder. Floating Object conserva la composición completa.
+
 ## Cómo cargar
 
 Subir **un ZIP individual** por ubicación. Cada ZIP incluye `index.html` en la raíz. No subir este paquete general como una única creatividad.

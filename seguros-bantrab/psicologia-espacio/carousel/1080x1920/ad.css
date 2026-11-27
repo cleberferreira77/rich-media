@@ -20,4 +20,10 @@
 .cube .face:nth-child(3){transform:rotateY(180deg) translateZ(var(--depth))}
 .cube .face:nth-child(4){transform:rotateY(270deg) translateZ(var(--depth))}
 @keyframes cube-spin{0%,19%{transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg)}25%,44%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-90deg)}50%,69%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-180deg)}75%,100%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-270deg)}}
-@media(prefers-reduced-motion:reduce){.floating .float-object,.carousel .panel,.cube-stage{animation:none}.carousel .panel.offer{display:none}.cube-stage{transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg)}}
+.carousel.story .panel.front{animation:story-front 12s ease-in-out infinite}
+.carousel.story .panel.offer{animation:story-offer 12s ease-in-out infinite}
+@keyframes story-front{0%,42%{opacity:1;transform:translateX(0)}50%{opacity:1;transform:translateX(-100%)}50.01%,91.99%{opacity:0;transform:translateX(100%)}92%{opacity:1;transform:translateX(100%)}100%{opacity:1;transform:translateX(0)}}
+@keyframes story-offer{0%,41.99%{opacity:0;transform:translateX(100%)}42%{opacity:1;transform:translateX(100%)}50%,92%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(-100%)}}
+.cube.story .cube-stage{animation:story-cube 12s ease-in-out infinite}
+@keyframes story-cube{0%,42%{transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg)}50%,93%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-90deg)}100%{transform:translateZ(calc(var(--depth)*-1)) rotateY(-180deg)}}
+@media(prefers-reduced-motion:reduce){.floating .float-object,.carousel .panel,.cube-stage,.carousel.story .panel,.cube.story .cube-stage{animation:none}.carousel .panel.offer{display:none}.cube-stage,.cube.story .cube-stage{transform:translateZ(calc(var(--depth)*-1)) rotateY(0deg)}}
